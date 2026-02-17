@@ -20,13 +20,13 @@ int main() {
             case 1:
                 printf("\nInventario de Precos:\n");
                 for(int i = 0; i < 5; i++) {
-                    // DICA: i + 1 para mostrar "Produto 1" em vez de "Produto 0"
+                    
                     printf("Produto %d: R$ %.2f\n", i + 1, precos[i]);
                 }
                 break;
 
             case 2: {
-                soma = 0; // RESET importante: limpa a soma antes de começar
+                soma = 0; 
                 for(int i = 0; i < 5; i++) {
                     soma += precos[i];
                 }
@@ -36,10 +36,8 @@ int main() {
             }
 
             case 3: {
-                // RESET da string: garante que o loop entre mesmo se 
-                // o usuario ja tiver tentado sair antes
+                
                 strcpy(sair, ""); 
-
                 while(strcmp(sair, "SAIR") != 0) {
                     printf("\nPara confirmar, digite SAIR: ");
                     scanf("%s", sair);
@@ -50,16 +48,15 @@ int main() {
                         printf("Palavra incorreta! Tente novamente.\n");
                     }
                 }
-                break; // Sai do case 3
+                break; 
             }
 
             default:
-                if(opcao != 3) { // Evita mostrar "Invalida" ao sair corretamente
+                if(opcao != 3) { 
                     printf("\nOpcao invalida! Tente 1, 2 ou 3.\n");
                 }
                 break;
         }
     }
-
     return 0;
 }
